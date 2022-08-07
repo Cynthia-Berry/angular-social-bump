@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<section>
+  <input type="search" class="form-control" [(ngModel)]="keyword" (ngModelChange)="searchPhotos($event)">
+  <small *ngIf="keyword">Viewing result for {{keyword}}</small>
+  <div *ngIf="!data">NO FOTOS DO SOME ASTETICS</div>
+</section>
+
+<section *ngIf="data">
+    <app-photo-search [photoData]="data"></app-photo-search>
+</section>

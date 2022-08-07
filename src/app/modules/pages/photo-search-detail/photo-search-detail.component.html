@@ -1,0 +1,8 @@
+<section>
+  <div>
+    <img [src]="imageUrl" [alt]="photo?.title">
+  </div>
+  <div *ngFor="let comment of photo?.comments">
+    <h2>{{comment}}</h2>
+  </div>
+</section>

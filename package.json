@@ -1,9 +1,15 @@
 {
   "name": "social-bump",
   "version": "0.0.0",
+  "description": "An social media application which allows users upload, make favourite, like and comment on users pictures",
+  "author": {
+    "name": "Cynthia Nwakaeme",
+    "email": "nwakaemecynthia@gmail.com",
+    "url": "https://github.com/Cynthia-Berry"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,6 +24,9 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.6.0",
+    "ngx-infinite-scroll": "^8.0.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

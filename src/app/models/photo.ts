@@ -12,7 +12,7 @@ import {
   Visibility
 } from "./helpers";
 
-export interface PhotoDetail {
+export interface Photo {
   comments: any,
   dates: Dates,
   dateuploaded: string,

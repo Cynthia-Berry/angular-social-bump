@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL: {
+    BASE_URL: 'https://www.flickr.com/services/rest',
+    FLICKR_API_KEY: '3216444c5ad6e79a0cd52a558f3a3dc7',
+  }
 };
 
 /*
