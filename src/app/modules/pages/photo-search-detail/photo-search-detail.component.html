@@ -11,20 +11,60 @@
   </header>
 
   <section *ngIf="photo" class="container-fluid">
-    <div class="card mt-2">
-      <img class="card-img-top img h-400" [src]="imageUrl" [alt]="photo?.title?._content">
-      <div class="card-body bg-primary text-white">
-        <div class="d-md-flex mx-auto">
-          <p class="card-text">{{photo?.title?._content}}</p>
+    <div class="container-fluid">
 
+      <div class="img-container">
+        <img class="card-img-top img h-400" [src]="imageUrl" [alt]="photo?.title?._content">
+        <div class="overlay">
+          <div class="row">
+            <div class="col">
+              <h5>{{photo?.owner?.username}}</h5>
+            </div>
+            <div class="col"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-    </div>
-    {{photo?.media}}
-    <div *ngFor="let comment of photo?.comments">
-      <h2>{{comment}}</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse,
+            molestias
+            quis inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex! Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse, molestias quis
+            inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex! Lorem
+            ipsum
+            dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse, molestias quis
+            inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse,
+            molestias
+            quis inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex! Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse, molestias quis
+            inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex! Lorem
+            ipsum
+            dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse, molestias quis
+            inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex!</p>
+          <div class="row">
+            <div class="col-5">Continent:</div>
+            <div class="col-7"><span class="badge bg-warning text-light">7</span></div>
+          </div>
+          <div class="row">
+            <div class="col-5">Countries:</div>
+            <div class="col-7"><span class="badge bg-primary text-light">23,972,99</span></div>
+          </div>
+          <div class="row">
+            <div class="col-5">Artists:</div>
+            <div class="col-7"><span class="badge bg-success text-light">12,098,9000</span></div>
+          </div>
+          <div class="row">
+            <div class="col-5">Gene:</div>
+            <div class="col-7"><span class="badge bg-dark text-light">All</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let comment of photo?.comments">
+        <h2>{{comment}}</h2>
+      </div>
     </div>
   </section>
 </div>

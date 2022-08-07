@@ -6,7 +6,7 @@
         <div class="d-flex">
           <input type="search" placeholder="search..." class="form-control me-2" [(ngModel)]="keyword"
                  (ngModelChange)="searchPhotos($event)">
-          <button class="btn btn-primary" type="submit">Search</button>
+          <button class="btn btn-primary" type="submit" (click)="searchPhotos(keyword)">Search</button>
         </div>
       </div>
     </nav>
@@ -15,13 +15,73 @@
     </h5>
   </header>
 
-  <section class="container">
-    <div *ngIf="!data">NO FOTOS DO SOME ASTETICS</div>
+  <div *ngIf="data; else DefaultPage" class="container">
+    <app-photo-search [photoData]="data"></app-photo-search>
+  </div>
 
-    <div *ngIf="data">
-      <app-photo-search [photoData]="data"></app-photo-search>
+  <ng-template #DefaultPage>
+    <div id="main">
+      <h4><small class="text-muted ml-2">FEATURED</small></h4>
+      <div class="featured mt-3">
+        <div class="feature" *ngFor="let item of [].constructor(50)">
+          <div class="date-float">
+            <span>Aug</span>
+            <span>08</span>
+          </div>
+          <div class="text-white m-0">
+            <p><small>CONCERT</small></p>
+            <h4>The Weekend</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-justify">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+            dolorum magni quaerat totam ducimus non, magnam voluptatem,
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Fugiat quos laudantium quam harum, porro cum quasi neque
+            recusandae similique fuga sunt optio commodi natus voluptate
+            vero omnis ab officiis. Voluptate.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+            dolorum magni quaerat totam ducimus non, magnam voluptatem,
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            error aperiam, nesciunt consequuntur ratione eligendiLorem ipsum, dolor sit amet consectetur adipisicing
+            elit.
+            error aperiam, nesciunt consequuntur ratione eligendiLorem ipsum, dolor sit amet consectetur adipisicing
+            elit.
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Fugiat quos laudantium quam harum, porro cum quasi neque
+            recusandae similique fuga sunt optio commodi natus voluptate
+            vero omnis ab officiis. Voluptate.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+            dolorum magni quaerat totam ducimus non, magnam voluptatem,
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            error aperiam, nesciunt consequuntur ratione eligendi
+            veritatis eos necessitatibus recusandae illo dolor culpa?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Fugiat quos laudantium quam harum, porro cum quasi neque
+            recusandae similique fuga sunt optio commodi natus voluptate
+            vero omnis ab officiis. Voluptate.
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
-
+  </ng-template>
 </div>
 

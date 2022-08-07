@@ -1,0 +1,16 @@
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .overlay {
+    position: absolute;
+    background-color: rgba(15, 15, 15, 0.6) !important;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0;
+    bottom: 0;
+    font-size: large;
+    text-align: left;
+  }
+}

@@ -20,7 +20,7 @@ export interface Photo {
   editability: Editability,
   farm: number,
   id: string,
-  isfavorite: Boolean,
+  isfavorite: number,
   license: string,
   media: string,
   notes: Notes,
