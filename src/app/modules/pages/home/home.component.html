@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-light bg-secondary">
       <div class="container-fluid">
-        <a class="navbar-brand"><h4>Social Bump</h4></a>
+        <a class="navbar-brand" routerLink="/dashboard"><h4>Social Bump</h4></a>
         <div class="d-flex">
           <input type="search" placeholder="search..." class="form-control me-2" [(ngModel)]="keyword"
                  (ngModelChange)="searchPhotos($event)">
@@ -17,6 +17,11 @@
 
   <div *ngIf="data; else DefaultPage" class="container">
     <app-photo-search [photoData]="data"></app-photo-search>
+    <div
+      infiniteScroll
+      [infiniteScrollDistance]="3"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll(keyword)"></div>
   </div>
 
   <ng-template #DefaultPage>
@@ -36,36 +41,6 @@
       </div>
       <div class="card">
         <div class="card-body text-justify">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            dolorum magni quaerat totam ducimus non, magnam voluptatem,
-            error aperiam, nesciunt consequuntur ratione eligendi
-            veritatis eos necessitatibus recusandae illo dolor culpa?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            error aperiam, nesciunt consequuntur ratione eligendi
-            veritatis eos necessitatibus recusandae illo dolor culpa?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Fugiat quos laudantium quam harum, porro cum quasi neque
-            recusandae similique fuga sunt optio commodi natus voluptate
-            vero omnis ab officiis. Voluptate.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            dolorum magni quaerat totam ducimus non, magnam voluptatem,
-            error aperiam, nesciunt consequuntur ratione eligendi
-            veritatis eos necessitatibus recusandae illo dolor culpa?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            error aperiam, nesciunt consequuntur ratione eligendiLorem ipsum, dolor sit amet consectetur adipisicing
-            elit.
-            error aperiam, nesciunt consequuntur ratione eligendiLorem ipsum, dolor sit amet consectetur adipisicing
-            elit.
-            error aperiam, nesciunt consequuntur ratione eligendi
-            veritatis eos necessitatibus recusandae illo dolor culpa?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Fugiat quos laudantium quam harum, porro cum quasi neque
-            recusandae similique fuga sunt optio commodi natus voluptate
-            vero omnis ab officiis. Voluptate.
-          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
             dolorum magni quaerat totam ducimus non, magnam voluptatem,

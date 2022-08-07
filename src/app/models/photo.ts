@@ -1,7 +1,7 @@
 import {
   Content,
   Dates,
-  Editability,
+  Editability, Location,
   Notes,
   Owner,
   People,
@@ -30,6 +30,7 @@ export interface Photo {
   people: People,
   publiceditability: Publiceditability,
   rotation: number,
+  location: Location,
   safety_level: string,
   secret: string,
   server: string

@@ -14,6 +14,7 @@ class PhotoContent {
 })
 export class HomeComponent implements OnInit {
   @Output() photos: EventEmitter<PhotoContent[]> = new EventEmitter();
+  @Output() searchText: EventEmitter<string> = new EventEmitter();
   public data!: any;
   public keyword!: string;
 
@@ -41,6 +42,17 @@ export class HomeComponent implements OnInit {
         classname: 'bg-danger text-light',
         delay: 6000
       });
+    }
+  }
+
+  async onScroll(keyword: string) {
+    console.log(keyword);
+    if (keyword && keyword.length > 0) {
+      const responseData = await lastValueFrom(this._apiService.fetchPhotos(keyword.toLowerCase()));
+      if (responseData.stat === 'ok') {
+        this.data= responseData.photos.photo;
+        this.photos.emit(this.data);
+      }
     }
   }
 

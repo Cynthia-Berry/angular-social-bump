@@ -10,8 +10,20 @@ export interface Content {
   _content: string
 }
 
-export interface Url {
-  _content: string
+export interface Location {
+  accuracy: string,
+  context: string,
+  country: Content,
+  county: Content,
+  latitude: string,
+  longitude: string,
+  locality: Content,
+  neighbourhood: Content,
+  region: Content
+}
+
+export interface Urls {
+  url: UrlContent[]
 }
 
 export interface Editability {
@@ -47,9 +59,6 @@ export interface Tags {
   tag: TagContent[],
 }
 
-export interface Urls {
-  url: UrlContent[],
-}
 
 export interface Usage {
   canblog: number,
