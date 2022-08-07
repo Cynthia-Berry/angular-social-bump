@@ -36,5 +36,5 @@ Below are the list of third party libraries used in this project:
 1) Bootstrap: This library is used for as a web technology to quicken my progress and help make this application
    responsive and have a great view on small and large screens. Click to read more on [Bootstrap Official Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
 
-2) ngx-infinite-scroll: This labiary helped me achieve the infinite scroll. This library was adopted for this project because its latest release was recent, and it is being maintained and easy to use. [Npx infinte scroll](https://www.npmjs.com/package/ngx-infinite-scroll).
+2) ngx-infinite-scroll: This labiary helped me achieve the infinite scroll. This library was adopted for this project because its latest release was recent, and it is being maintained and easy to use. [Npx infinite scroll](https://www.npmjs.com/package/ngx-infinite-scroll).
 
