@@ -2,29 +2,72 @@
   <header>
     <nav class="navbar navbar-light bg-secondary">
       <div class="container-fluid">
-        <a class="navbar-brand"><h4>Social Bump</h4></a>
-        <div class="d-flex">
-          <a routerLink="/dashboard">Dashboard</a>
-        </div>
+        <a class="navbar-brand" routerLink="/dashboard"><h4>Social Bump</h4></a>
       </div>
     </nav>
   </header>
 
-  <section *ngIf="photo" class="container-fluid">
-    <div class="card mt-2">
-      <img class="card-img-top img h-400" [src]="imageUrl" [alt]="photo?.title?._content">
-      <div class="card-body bg-primary text-white">
-        <div class="d-md-flex mx-auto">
-          <p class="card-text">{{photo?.title?._content}}</p>
-
+  <section *ngIf="photo">
+    <div class="container-fluid mt-4">
+      <div class="img-container">
+        <img class="img h-400" [src]="imageUrl" [alt]="photo?.title?._content">
+        <div class="overlay">
+          <div class="row">
+            <div class="col-8">
+              <h6>{{photo?.title?._content | titlecase}}</h6>
+            </div>
+            <div class="col-4">
+              <div class="float-right">
+                <img src="assets/images/png/calendar.png" alt="taken" width="20" height="20"><small
+                class="ml-2">{{photo?.dates?.taken | date : 'mediumDate'}}</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-    </div>
-    {{photo?.media}}
-    <div *ngFor="let comment of photo?.comments">
-      <h2>{{comment}}</h2>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <p><span class="font-weight-bold">Description: </span>
+                {{photo?.description?._content}}.
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse,
+                quis inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex!
+                dolor sit amet, consectetur adipisicing elit. Minus reiciendis atque quia labore esse, molestias quis
+                inventore modi voluptatum explicabo autem eum similique natus at illum aliquam sit cupiditate ex!
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div *ngFor="let tag of photo?.tags?.tag">
+              <span class="badge badge-primary me-3 float-right">{{tag?.raw}}</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-5">Continent:</div>
+            <div class="col-7"><span class="badge bg-warning text-light">7</span></div>
+          </div>
+          <div class="row">
+            <div class="col-5">Countries:</div>
+            <div
+              class="col-7">{{photo?.location?.country?._content ? photo?.location?.country?._content : 'No country'}}</div>
+          </div>
+          <div class="row">
+            <div class="col-5">Locality:</div>
+            <div
+              class="col-7">{{photo?.location?.locality?._content ? photo?.location?.locality?._content : 'No Locality'}}</div>
+          </div>
+          <div class="row">
+            <div class="col-5">Region:</div>
+            <div
+              class="col-7">{{photo?.location?.region?._content ? photo?.location?.region?._content : 'No Regiion'}}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
