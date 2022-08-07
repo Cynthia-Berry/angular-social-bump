@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   fetchPhotos(keyword: string): Observable<PhotosResponseObj<Photos>> {
-    const params = `/?method=flickr.photos.search&api_key=${this.API_KEY}&text=${keyword}&format=json&nojsoncallback=1&per_page=10`;
+    const params = `/?method=flickr.photos.search&api_key=${this.API_KEY}&text=${keyword}&format=json&nojsoncallback=1&per_page=12`;
     return this._httpClient.get<PhotosResponseObj<Photos>>(`${this.BASE_URL}${params}`)
   }
 

@@ -1,11 +1,27 @@
-<app-header></app-header>
+<div>
+  <header>
+    <nav class="navbar navbar-light bg-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand"><h4>Social Bump</h4></a>
+        <div class="d-flex">
+          <input type="search" placeholder="search..." class="form-control me-2" [(ngModel)]="keyword"
+                 (ngModelChange)="searchPhotos($event)">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </div>
+    </nav>
+    <h5 class="my-3 text-center" *ngIf="keyword">Showing result for:
+      <span class="text-primary">{{keyword | titlecase}}</span>
+    </h5>
+  </header>
 
-<section>
-  <input type="search" class="form-control" [(ngModel)]="keyword" (ngModelChange)="searchPhotos($event)">
-  <small *ngIf="keyword">Viewing result for {{keyword}}</small>
-  <div *ngIf="!data">NO FOTOS DO SOME ASTETICS</div>
-</section>
+  <section class="container">
+    <div *ngIf="!data">NO FOTOS DO SOME ASTETICS</div>
 
-<section *ngIf="data">
-    <app-photo-search [photoData]="data"></app-photo-search>
-</section>
+    <div *ngIf="data">
+      <app-photo-search [photoData]="data"></app-photo-search>
+    </div>
+  </section>
+
+</div>
+

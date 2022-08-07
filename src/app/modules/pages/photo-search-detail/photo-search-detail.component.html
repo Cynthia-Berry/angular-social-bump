@@ -1,8 +1,30 @@
-<section>
-  <div>
-    <img [src]="imageUrl" [alt]="photo?.title">
-  </div>
-  <div *ngFor="let comment of photo?.comments">
-    <h2>{{comment}}</h2>
-  </div>
-</section>
+<div>
+  <header>
+    <nav class="navbar navbar-light bg-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand"><h4>Social Bump</h4></a>
+        <div class="d-flex">
+          <a routerLink="/dashboard">Dashboard</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section *ngIf="photo" class="container-fluid">
+    <div class="card mt-2">
+      <img class="card-img-top img h-400" [src]="imageUrl" [alt]="photo?.title?._content">
+      <div class="card-body bg-primary text-white">
+        <div class="d-md-flex mx-auto">
+          <p class="card-text">{{photo?.title?._content}}</p>
+
+        </div>
+      </div>
+    </div>
+    <div>
+    </div>
+    {{photo?.media}}
+    <div *ngFor="let comment of photo?.comments">
+      <h2>{{comment}}</h2>
+    </div>
+  </section>
+</div>
