@@ -34,7 +34,13 @@ Navigate to `http://localhost:4200/` if you ran `ng serve` else The app will aut
 Below are the list of third party libraries used in this project:
 
 1) Bootstrap: This library is used for as a web technology to quicken my progress and help make this application
-   responsive and have a great view on small and large screens. Click to read more on [Bootstrap Official Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
+   responsive and have a great view on small and large screens. Click to read more
+   on [Bootstrap Official Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
 
-2) ngx-infinite-scroll: This labiary helped me achieve the infinite scroll. This library was adopted for this project because its latest release was recent, and it is being maintained and easy to use. [Npx infinite scroll](https://www.npmjs.com/package/ngx-infinite-scroll).
+2) ngx-infinite-scroll: This library helped me achieve the infinite scroll. This library was adopted for this project
+   because its latest release was recent, and it is being maintained and easy to
+   use. [Npx infinite scroll](https://www.npmjs.com/package/ngx-infinite-scroll).
+
+3) ngx-ui-loader: This library is shows a spinner when a request is being made to the serverside. It helps ensure the
+   users wait for the response while navigating through the application
 

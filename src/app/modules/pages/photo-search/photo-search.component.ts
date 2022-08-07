@@ -43,8 +43,6 @@ export class PhotoSearchComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     const photoData = changes['photoData']
-    console.log(photoData.previousValue)
-    console.log(photoData.currentValue)
     if (photoData.previousValue) {
       this.photoData = [...photoData.previousValue, ...photoData.currentValue];
       console.log(this.photoData)
