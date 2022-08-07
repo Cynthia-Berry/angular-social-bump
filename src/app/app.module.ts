@@ -7,7 +7,6 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './modules/components/header/header.component';
 import { PhotoSearchComponent } from './modules/pages/photo-search/photo-search.component';
 import { PhotoSearchDetailComponent } from './modules/pages/photo-search-detail/photo-search-detail.component';
 import {HomeComponent} from "./modules/pages/home/home.component";
@@ -15,7 +14,6 @@ import {HomeComponent} from "./modules/pages/home/home.component";
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     PhotoSearchComponent,
     PhotoSearchDetailComponent,

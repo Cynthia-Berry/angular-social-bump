@@ -31,7 +31,7 @@ export class PhotoSearchDetailComponent implements OnInit {
     console.log(responseData.photo)
     if (responseData.stat === 'ok') {
       this.imageUrl = `https://farm${responseData.photo.farm}.staticflickr.com/${responseData.photo.server}/${responseData.photo.id}_${responseData.photo.secret}.jpg`
-      // this.photo = responseData.photo;
+      this.photo = responseData.photo;
       // console.log(this.photo)
     }
   }

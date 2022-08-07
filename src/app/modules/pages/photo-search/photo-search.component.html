@@ -1,16 +1,20 @@
 <section>
-  <div class="main-panel">
-    <div class="row">
-      <div *ngFor="let photo of photos" class="col-lg-4 col-md-6 col-sm-12 p-3 img">
-        <img [src]="photo?.imgUrl" [alt]="photo?.title" (click)="getPhoto(photo)">
+  <div class="row">
+    <div *ngFor="let photo of photos" class="col-lg-4 col-md-6 col-sm-12 p-2">
+      <div class="card-group">
+        <img class="img card-img-top h-250" [src]="photo?.imgUrl" [alt]="photo?.title" (click)="getPhoto(photo)">
+        <div class="card bg-info h-100">
+          <div class="card-footer">
+            <p class="text-center">{{photo?.title}}</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div
-      class="search-results"
-      infiniteScroll
-      [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="50"
-      (scrolled)="onScroll()"></div>
   </div>
-
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"></div>
 </section>
